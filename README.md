@@ -1,7 +1,7 @@
 ### CS 7641 Project 3: Unsupervised Learning and Dimensionality Reduction
 
 # Github Link:
-https://github.com/jles9/CS7641.git
+https://github.com/jles9/CS7641_p3.git
 
 ## Overview
 This project seeks to conduct a suvery of unsuprivised learning and dimensionality reduction algorithims, including:
@@ -68,7 +68,7 @@ GT ID: 903742149
 
 ## Acknowledgements
 The Project Specifications the following code was written for are provided by:
-Georgia Institute of Technology's CS 7642 (Machine Learning) Class.
+Georgia Institute of Technology's CS 7641 (Machine Learning) Class.
 
 Professors: Charles Isbell and Michael Littman
 
