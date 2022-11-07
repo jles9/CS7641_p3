@@ -13,7 +13,7 @@ This project seeks to conduct a suvery of unsuprivised learning and dimensionali
         PCA
         ICA
         Randomized Projections
-        Another Feature Selection Algo
+        Feature Analysis
 
 
 For this project, each algorithim is analyzed with respect to two different datasets:
@@ -44,7 +44,9 @@ For this project, each algorithim is analyzed with respect to two different data
 
     /Data: Contains datasets used, along with additional datasets used when implementing algorithims 
 
-    Other included files are incidental and left for later cleanup
+    NNAgent.py : code for NN Agent
+    util.py: Additional util for getting data
+    clustering.py: contains all the code, because I did not have time to modularize
 
 
 
