@@ -46,8 +46,8 @@ def main():
         warnings.filterwarnings(
             "ignore", category=ConvergenceWarning, module="sklearn"
         )
-    runExpDataSet1()
-    # runExpDataSet2()
+    # runExpDataSet1()
+    runExpDataSet2()
 
 
 if __name__ == "__main__":

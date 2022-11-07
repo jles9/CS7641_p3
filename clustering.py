@@ -79,7 +79,7 @@ def elbow(X, dataname, expName):
 
     vis_elbow.fit(X)
     # vis.show()
-    vis_elbow.show('./graphs/elbow/{}_{}_{}.png'.format('Water', "Kmeans", expName))
+    vis_elbow.show('./graphs/elbow/{}_{}_{}.png'.format(dataname, "Kmeans", expName))
     plt.figure()
 
 
@@ -88,7 +88,7 @@ def elbow(X, dataname, expName):
     model_g = GaussianMixtureCluster()
     vis_gm = KElbow(model_g, k=(2,20), force_model=True)
     vis_gm.fit(X)
-    vis_gm.show('./graphs/elbow/{}_{}_{}.png'.format('Water', "EM", expName))
+    vis_gm.show('./graphs/elbow/{}_{}_{}.png'.format(dataname, "EM", expName))
     plt.figure()
 
 
@@ -422,3 +422,5 @@ def runExpWine(X,Y):
     ica(X,Y, "Wine", "std")
     rand_proj(X,Y, "Wine", "std")
     fa(X,Y, "Wine", "std")
+
+    exp3Wine(X,Y)
