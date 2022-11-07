@@ -401,23 +401,23 @@ def runExpWater(X, Y):
 
     # pdb.set_trace()
 
-    #adj_rand(X,Y, "Water", "std")
-    #elbow(X, "Water", "std")
-    #silh(X, "Water", "std")
-    #pcaWater(X,Y)
-    #ica(X,Y, "Water", "std")
-    #rand_proj(X,Y, "Water", "std")
-    #fa(X,Y, "Water", "std")
+    adj_rand(X,Y, "Water", "std")
+    elbow(X, "Water", "std")
+    silh(X, "Water", "std")
+    pcaWater(X,Y)
+    ica(X,Y, "Water", "std")
+    rand_proj(X,Y, "Water", "std")
+    fa(X,Y, "Water", "std")
 
-    #exp3Water(X,Y)
+    exp3Water(X,Y)
 
     exp4Water(X,Y)
 
 
 def runExpWine(X,Y):
-    # adj_rand(X,Y, "Wine", "std")
-    # elbow(X, "Wine", "std")
-    # silh(X, "Wine", "std")
+    adj_rand(X,Y, "Wine", "std")
+    elbow(X, "Wine", "std")
+    silh(X, "Wine", "std")
     pcaWine(X,Y)
     ica(X,Y, "Wine", "std")
     rand_proj(X,Y, "Wine", "std")
