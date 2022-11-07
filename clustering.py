@@ -138,6 +138,32 @@ def adj_rand(X, Y, dataname, expName):
     plt.legend()
     plt.savefig('./graphs/homo/{}_{}_{}.png'.format(dataname, "Kmeans", expName))
 
+def adj_rand_EM(X, Y, dataname, expName):
+
+    clusters = np.arange(2,21)
+
+    homo_scores = []
+    ar_scores = []
+
+    for cluster in clusters:
+        model = GaussianMixtureCluster(n_components=cluster)
+        model.fit(X)
+        ar = adjusted_rand_score(Y, model.predict(X))
+        homo = homogeneity_score(Y, model.predict(X))
+        homo_scores.append(homo)
+        ar_scores.append(ar)
+
+
+    # pdb.set_trace()
+    plt.figure()
+    plt.plot(clusters, homo_scores, color="red", label="Homogeneity")
+    plt.plot(clusters, ar_scores, color="cyan", label="ARI")
+    plt.title('{} {} ({}, {})'.format("Homogeneity Score vs Clusters", 'Kmeans', dataname,  expName))
+    plt.xlabel("Number of Clusters")
+    plt.ylabel("Homogeneity Score")
+    plt.legend()
+    plt.savefig('./graphs/homo/{}_{}_{}.png'.format(dataname, "EM", expName))
+
 
 def pcaWater(X, Y):
     
@@ -277,6 +303,7 @@ def exp3Water(X,Y):
     model_pca.fit(X)
     X_pca = model_pca.transform(X)
     adj_rand(X,Y, "Water", "pca")
+    adj_rand_EM(X,Y, "Water", "pca")
     elbow(X, "Water", "pca")
     silh(X, "Water", "pca")
 
@@ -284,6 +311,7 @@ def exp3Water(X,Y):
     model_ica.fit_transform(X)
     X_ica = model_ica = model_ica.transform(X)
     adj_rand(X,Y, "Water", "ica")
+    adj_rand_EM(X,Y, "Water", "ica")
     elbow(X, "Water", "ica")
     silh(X, "Water", "ica")
 
@@ -291,6 +319,7 @@ def exp3Water(X,Y):
     model_rp.fit_transform(X)
     X_rp = model_rp.fit_transform(X)
     adj_rand(X,Y, "Water", "rp")
+    adj_rand_EM(X,Y, "Water", "rp")
     elbow(X, "Water", "rp")
     silh(X, "Water", "rp")
 
@@ -298,6 +327,7 @@ def exp3Water(X,Y):
     model_fa.fit_transform(X)
     X_fa = model_fa.fit_transform(X)
     adj_rand(X,Y, "Water", "fa")
+    adj_rand_EM(X,Y, "Water", "fa")
     elbow(X, "Water", "fa")
     silh(X, "Water", "fa")
 
